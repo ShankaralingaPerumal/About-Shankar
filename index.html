@@ -3,108 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me | Manufacturing Leader</title>
+  <title>Shankaralinga Perumal Kannapiran</title>
   <style>
+    :root {
+      --bg-light: #ffffff;
+      --text-light: #111111;
+      --bg-dark: #121212;
+      --text-dark: #e0e0e0;
+      --border-color: #cccccc;
+    }
+
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s, color 0.3s;
     }
+
     .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem;
-      background: #fff;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
     }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
+
+    header, section {
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      background: inherit;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.2rem;
+
+    h1, h2 {
+      margin-top: 0;
     }
-    h2 {
-      color: #555;
-      margin-top: 2rem;
+
+    .toggle-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
     }
-    .section {
-      margin-bottom: 2rem;
+
+    body.dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
     }
-    .highlight {
-      color: #2a9d8f;
-      font-weight: bold;
-    }
-    ul {
-      padding-left: 1.2rem;
+
+    body.dark-mode header,
+    body.dark-mode section {
+      border-color: #444;
     }
   </style>
 </head>
 <body>
+  <button class="toggle-btn" onclick="toggleMode()">Toggle Dark Mode</button>
   <div class="container">
     <header>
-      <h1>Your Name</h1>
-      <p class="highlight">Senior Manufacturing & Supplier Quality Engineer | Aspiring Manager</p>
+      <h1>Shankaralinga Perumal Kannapiran</h1>
+      <h2>Senior Manufacturing and Supplier Development Engineer</h2>
     </header>
 
-    <section class="section">
-      <h2>Professional Summary</h2>
-      <p>
-        With over <span class="highlight">8 years of experience</span> in manufacturing engineering, supplier quality improvement,
-        and cross-functional leadership, I bring a track record of driving operational excellence in fast-paced environments.
-        I specialize in <span class="highlight">variability reduction</span>, lean systems, and supplier development,
-        aiming to elevate organizations to world-class manufacturing standards.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>Core Competencies</h2>
-      <ul>
-        <li>Manufacturing Process Optimization</li>
-        <li>Supplier Quality Management & Audits</li>
-        <li>APQP, PPAP, 8D, and Root Cause Analysis</li>
-        <li>Lean Manufacturing & Six Sigma</li>
-        <li>Cross-Functional Team Leadership</li>
-        <li>Data-Driven Decision Making</li>
-      </ul>
-    </section>
-
-    <section class="section">
+    <section>
       <h2>Career Highlights</h2>
       <ul>
-        <li>Led key variability reduction initiatives, directly improving manufacturing yields and reducing rework costs.</li>
-        <li>Successfully managed supplier onboarding, audits, and corrective actions resulting in long-term quality improvement.</li>
-        <li>Worked independently with global teams, coordinating efforts across supply chain, engineering, and quality functions.</li>
+        <li>8+ years of experience across manufacturing engineering, supplier quality, and product development.</li>
+        <li>Led strategic supplier development projects with a focus on PPAP, APQP, SCAR, and process optimization.</li>
+        <li>Hands-on experience in managing cross-functional teams and continuous improvement in EV startups.</li>
+        <li>Strong analytical and technical skills using PowerBi, Jira, and engineering tools like CATIA, ANSYS, and MATLAB.</li>
+        <li>Seeking impactful leadership roles in innovative, high-growth manufacturing companies.</li>
       </ul>
     </section>
 
-    <section class="section">
-      <h2>Target Roles</h2>
-      <p>Manager or Lead roles in Manufacturing, Supplier Quality, or Operations Engineering at forward-thinking, high-tech manufacturing companies.</p>
-    </section>
-
-    <section class="section">
-      <h2>Companies of Interest</h2>
+    <section>
+      <h2>Experience</h2>
+      <p><strong>Senior Supplier Development Engineer – Rivian</strong> (Oct 2024 – Present)</p>
       <ul>
-        <li>Nimble Robotics</li>
-        <li>Google (Hardware or Manufacturing Operations)</li>
-        <li>Wing (Alphabet)</li>
-        <li>Enphase Energy</li>
-        <li>Arc Boats</li>
-        <li>And other innovation-focused, sustainability-driven companies</li>
+        <li>Lead supplier quality compliance and PPAP validation for new production parts.</li>
+        <li>Drive root cause analysis, on-site audits, and implementation of corrective actions.</li>
+        <li>Collaborate with suppliers to enhance performance and meet GA specifications.</li>
+      </ul>
+      <p><strong>Quality Engineer II – Rivian</strong> (Jan 2023 – Oct 2023)</p>
+      <ul>
+        <li>Reduced rework cost and improved rework cycle time through time studies and PowerBi dashboards.</li>
+        <li>Led high-priority quality workflows for EDV battery and motor projects.</li>
+        <li>Developed 3D-printed fixtures and work instructions for third-party rework vendors.</li>
+      </ul>
+      <p><strong>Engineering Manager – ATCO Industries Inc</strong> (May 2021 – Jan 2023)</p>
+      <ul>
+        <li>Led consumable inventory and 5-S implementation improving Rivian compliance scores.</li>
+        <li>Expanded ATCO services to new Rivian operations including Battery, Harness, and GA.</li>
+        <li>Reduced rework space and improved process efficiency using data-driven studies.</li>
+      </ul>
+      <p><strong>Project Engineer – University of Texas at Arlington</strong> (Feb 2019 – Dec 2019)</p>
+      <ul>
+        <li>Designed and validated rocket engine prototypes and components using CATIA & ANSYS.</li>
+        <li>Improved impact absorption systems with cost-effective, additive manufacturing methods.</li>
+      </ul>
+      <p><strong>Mechanical Engineer – Sri Gokul Engineer Pvt Ltd</strong> (Aug 2016 – Oct 2018)</p>
+      <ul>
+        <li>Optimized CNC machining, reduced material wastage, and improved communication with vendors.</li>
+        <li>Increased productivity and supported new product introduction in high-volume settings.</li>
+      </ul>
+      <p><strong>Research Assistant – Anna University</strong> (Sep 2014 – Apr 2016)</p>
+      <ul>
+        <li>Developed hybrid rocket engine components and increased efficiency using Six Sigma principles.</li>
+        <li>Documented testing outcomes and design specs in compliance with R&D protocols.</li>
       </ul>
     </section>
 
-    <section class="section">
-      <h2>Let’s Connect</h2>
-      <p>
-        If you're looking for a technically strong, results-driven leader to guide your manufacturing or supply chain transformation,
-        feel free to reach out or learn more on my <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>.
-      </p>
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li><strong>M.S. Mechanical Engineering</strong> – University of Texas at Arlington (2019–2020)</li>
+        <li><strong>B.E. Aeronautical Engineering</strong> – Anna University, Chennai (2012–2016)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Certifications & Skills</h2>
+      <ul>
+        <li>Certifications: Six Sigma Green Belt, GD&T, FMEA, Lean Manufacturing, Supply Chain, Project Management</li>
+        <li>Design Software: CATIA V5, AutoCAD, SolidWorks, MATLAB, ANSYS</li>
+        <li>Tools: PowerBi, Smartsheet, Jira, MS Office, Excel</li>
+        <li>Skills: Leadership, Presentation, Negotiation, Root Cause Analysis, Data Interpretation</li>
+      </ul>
     </section>
   </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
