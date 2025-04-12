@@ -1,103 +1,120 @@
-// Main layout and page structure
-// We'll scaffold a 5-page professional portfolio with Tailwind, React, dark mode toggle, and detailed experiences
+<!DOCTYPE html>
+<html lang="en">
 
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shankaralingam P K | Career Portfolio</title>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --section-border: #333;
+      --accent-color: #00bfa6;
+    }
 
-import { Sun, Moon } from "lucide-react";
+    body.light-mode {
+      --bg-color: #f9f9f9;
+      --text-color: #1a1a1a;
+      --section-border: #ccc;
+    }
 
-const Layout = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(true);
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      transition: background 0.3s, color 0.3s;
+    }
 
-  return (
-    <div className={darkMode ? "dark bg-gray-900 text-white min-h-screen" : "bg-white text-gray-900 min-h-screen"}>
-      <div className="p-4 flex justify-between items-center border-b border-gray-700">
-        <h1 className="text-xl font-bold">Shankaralinga Perumal K</h1>
-        <div className="space-x-4 flex items-center">
-          <Link to="/" className="hover:underline">Home</Link>
-          <Link to="/about" className="hover:underline">About</Link>
-          <Link to="/experience" className="hover:underline">Experience</Link>
-          <Link to="/skills" className="hover:underline">Skills</Link>
-          <Link to="/contact" className="hover:underline">Contact</Link>
-          <button onClick={() => setDarkMode(!darkMode)}>
-            {darkMode ? <Sun /> : <Moon />}
-          </button>
-        </div>
-      </div>
-      <div className="p-6 max-w-4xl mx-auto">{children}</div>
-    </div>
-  );
-};
+    .toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--accent-color);
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
 
-const Home = () => (
-  <Layout>
-    <h2 className="text-2xl font-semibold mb-2">Welcome</h2>
-    <p className="text-lg">Driving Quality & Innovation in Global Manufacturing</p>
-    <p className="mt-4">Explore my journey, achievements, and projects that go beyond what's in my resume.</p>
-  </Layout>
-);
+    h1, h2 {
+      color: var(--accent-color);
+    }
 
-const About = () => (
-  <Layout>
-    <h2 className="text-2xl font-semibold mb-4">About Me</h2>
-    <p>I am a seasoned Quality and Manufacturing Engineering professional with over 8 years of experience across supplier development, process improvement, and end-to-end quality systems. My journey started with a passion for solving real-world problems in automotive and high-tech manufacturing.</p>
-    <p className="mt-2">I thrive in fast-paced environments, lead cross-functional teams, and ensure seamless supplier collaboration. My approach blends data-driven decision-making with hands-on root cause analysis.</p>
-    <p className="mt-2">Currently based in Central Illinois, I’m seeking opportunities in Dallas, TX, and open to H1B visa sponsorship.</p>
-  </Layout>
-);
+    section {
+      border: 1px solid var(--section-border);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+    }
 
-const Experience = () => (
-  <Layout>
-    <h2 className="text-2xl font-semibold mb-4">Professional Experience</h2>
-    <div className="space-y-6">
-      <div>
-        <h3 className="text-xl font-bold">Senior Supplier Quality Engineer</h3>
-        <p className="text-sm text-gray-400">2021 – Present | Automotive Tier-1</p>
-        <p className="mt-2">Led supplier quality initiatives to reduce variability across multiple high-volume production lines. Implemented APQP methodologies and PFMEA audits that resulted in a 23% decrease in supplier-related rejections.</p>
-        <p className="mt-2">Collaborated with global suppliers and internal design teams to resolve technical issues quickly, leading to a 15% improvement in delivery timelines. Recognized by leadership for creating a visual inspection standard that became company-wide best practice.</p>
-      </div>
-      <div>
-        <h3 className="text-xl font-bold">Manufacturing Engineer</h3>
-        <p className="text-sm text-gray-400">2016 – 2021 | OEM & Component Manufacturer</p>
-        <p className="mt-2">Worked across multiple machining, welding, and assembly lines. Designed process flow diagrams, established control plans, and led Kaizen events, saving over $100K in cost annually.</p>
-        <p className="mt-2">Trained over 50 operators and engineers in root cause analysis and corrective action techniques. Played a key role in launching new production lines for EV components with minimal ramp-up issues.</p>
-      </div>
-    </div>
-  </Layout>
-);
+    a {
+      color: var(--accent-color);
+    }
+  </style>
+</head>
 
-const Skills = () => (
-  <Layout>
-    <h2 className="text-2xl font-semibold mb-4">Skills & Tools</h2>
-    <ul className="list-disc pl-6 space-y-2">
-      <li>Quality Tools: APQP, PPAP, FMEA, Control Plans, 8D</li>
-      <li>Software: Minitab, SAP, MS Office Suite, AutoCAD</li>
-      <li>Manufacturing Processes: CNC, Assembly, Welding, Heat Treatment</li>
-      <li>Soft Skills: Leadership, Communication, Root Cause Analysis</li>
-    </ul>
-    <p className="mt-4">You can download my detailed resume <a href="#" className="underline">here</a>.</p>
-  </Layout>
-);
+<body>
+  <button class="toggle" onclick="toggleMode()">Toggle Dark/Light</button>
 
-const Contact = () => (
-  <Layout>
-    <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-    <p>Email: <a href="mailto:shankaralingaperumal@gmail.com" className="underline">shankaralingaperumal@gmail.com</a></p>
+  <section>
+    <h1>Shankaralingam P Kannapiran</h1>
+    <p>Email: <a href="mailto:shankaralingaperumal@gmail.com">shankaralingaperumal@gmail.com</a></p>
     <p>Phone: +1 682-414-5568</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/shankaralingaperumal-kannapiran-05352b74/" className="underline" target="_blank">View Profile</a></p>
-  </Layout>
-);
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/shankaralingaperumal-kannapiran-05352b74/" target="_blank">Profile</a></p>
+  </section>
 
-const App = () => (
-  <Router>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/experience" element={<Experience />} />
-      <Route path="/skills" element={<Skills />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
-  </Router>
-);
+  <section>
+    <h2>About Me</h2>
+    <p>I am a seasoned Supplier Quality and Manufacturing Engineer with over 8 years of experience delivering results in dynamic automotive environments. My journey has been focused on process improvement, cross-functional collaboration, and cost optimization. I'm passionate about problem solving, continuous learning, and transforming complex challenges into sustainable solutions.</p>
+  </section>
 
-export default App;
+  <section>
+    <h2>Career Journey</h2>
+    <ul>
+      <li>🔧 Senior Supplier Quality Engineer, 2023–Present – Leading SQ processes and systems at Tier 1 suppliers.</li>
+      <li>🚗 Supplier Industrialization Engineer – Streamlined launch controls and PPAPs for global manufacturing scale.</li>
+      <li>📊 Quality Engineer – Developed FMEA, control plans, and standardized metrics for supplier performance.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Impact Highlights</h2>
+    <ul>
+      <li>✔️ Reduced contractor cost by 50% by enforcing direct chargebacks.</li>
+      <li>✔️ Deployed rework efficiency metrics, improving labor tracking across supplier sites.</li>
+      <li>✔️ Created quality training modules that raised internal audit scores by 35%.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills & Tools</h2>
+    <ul>
+      <li>Manufacturing: APQP, PPAP, Lean, DFMEA, PFMEA</li>
+      <li>Quality: ISO 9001, IATF 16949, 8D, Root Cause Analysis</li>
+      <li>Tools: PowerBI, SAP, Jira, CATIA, Tableau</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Project Stories</h2>
+    <p><strong>Supplier Recovery Program (2022):</strong> Rebuilt failing supply chain from 4-week delays to on-time delivery within 2 months through supplier audits and action planning.</p>
+    <p><strong>New Product Launch - EV Platform:</strong> Integrated supplier quality gates and shortened launch ramp-up time by 40%.</p>
+  </section>
+
+  <section>
+    <h2>Contact & Resume</h2>
+    <p>Email me at <a href="mailto:shankaralingaperumal@gmail.com">shankaralingaperumal@gmail.com</a> or download my <a href="#">resume</a>.</p>
+  </section>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("light-mode");
+    }
+  </script>
+</body>
+
+</html>
